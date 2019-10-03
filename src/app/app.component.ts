@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Server } from 'stellar-sdk';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'demo-stellar';
+	title = 'demo-stellar';
+
+	server: any;
+
+	constructor() {
+		this.server = new Server('https://horizon-testnet.stellar.org');
+	}
 }
